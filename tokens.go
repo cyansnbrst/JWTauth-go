@@ -15,9 +15,6 @@ import (
 // Секретный ключ для подписи токена (Signature)
 var jwtKey = []byte("goncharova_ekaterina")
 
-// Соль для bcrypt'а
-var salt = []byte("refresh_salt")
-
 func generateAccessToken(guid string) (string, time.Time, error) {
 	// Создаем access токен. Валиден 5 минут, алгоритм - HS512 (основан на SHA512)
 	accessTime := time.Now().Add(time.Minute * 5)
