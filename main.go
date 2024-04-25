@@ -8,7 +8,7 @@ import (
 func main() {
 	// Эндпоинты
 	http.HandleFunc("/login", getTokenPair)
-	http.HandleFunc("/refresh", Refresh)
+	http.HandleFunc("/refresh", refresh)
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
