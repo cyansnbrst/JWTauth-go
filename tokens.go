@@ -43,7 +43,7 @@ type RefreshSessions struct {
 
 func generateRefreshToken(guid string) (string, time.Time, error) {
 	// Создаем refresh токен. Валиден 24 часа
-	accessTime := time.Now().Add(time.Second * 24)
+	accessTime := time.Now().Add(time.Hour * 24)
 
 	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb://localhost:27017"))
 	if err != nil {
